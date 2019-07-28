@@ -1,6 +1,6 @@
 # sqlite3-promisify
 
-[![Build Status](https://img.shields.io/badge/build-passing-success.svg)](https://img.shields.io/badge/build-passing-success.svg)
+[![Build Status](https://api.travis-ci.com/arshadkazmi42/sqlite3-promisify.svg?branch=master)](https://api.travis-ci.com/arshadkazmi42/sqlite3-promisify)
 
 Promisifying node-sqlite3 functions
 

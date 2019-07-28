@@ -1,13 +1,32 @@
 const { expect } = require('chai');
 
-// Import your code which to be tested
 
-// Initialize static data
+const SQLiteCrud = require('../index');
 
-/**
-describe('description of the test', () => {
-  it('details of the specific test', () => {
-    expect(0).to.equal(0);
+const PATH = 'data/sqlite3_test.db';
+
+
+describe('Tests DB functinos', () => {
+  it('should throw an error', () => {
+    let error = false;
+    try {
+      new SQLiteCrud('../somepath/db');
+    } catch (err) {
+      console.log('here');
+      error = true;
+    }
+
+    expect(error).to.equal(true);
+    
+  });
+  it('should connect to the database', () => {
+    let error = false;
+    try {
+      new SQLiteCrud(PATH);
+    } catch (err) {
+      error = true;
+    }
+
+    expect(error).to.equal(false);
   });
 });
-**/

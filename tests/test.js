@@ -9,9 +9,7 @@ const ROWS = [
   { id: 1, name: 'Arshad', email: 'arshadkazmi42@gmail.com' },
   { id: 2, name: 'Sqlite3', email: 'sqlite3@db.com' }
 ];
-const UPDATE_ROW = [ 
-  { id: 1, name: 'arshadkazmi42', email: 'arshadkazmi42@gmail.com' } 
-];
+const UPDATE_ROW = { id: 1, name: 'arshadkazmi42', email: 'arshadkazmi42@gmail.com' };
 
 
 describe('Tests DB functinos', () => {
@@ -34,7 +32,7 @@ describe('Tests DB functinos', () => {
   it('should update row', async () => {
     const SqliteCrud = new SQLiteCrud(PATH);
     await SqliteCrud.run(`UPDATE ${DB_NAME} SET name = 'arshadkazmi42' WHERE id = 1;`);
-    const row = await SqliteCrud.all(`SELECT * FROM ${DB_NAME} WHERE id = 1;`);
+    const row = await SqliteCrud.get(`SELECT * FROM ${DB_NAME} WHERE id = 1;`);
     await SqliteCrud.run(`UPDATE ${DB_NAME} SET name = 'Arshad' WHERE id = 1;`);
     await SqliteCrud.close();
     expect(row).to.deep.equal(UPDATE_ROW);

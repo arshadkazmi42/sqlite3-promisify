@@ -9,7 +9,6 @@ const ROWS = [
   { id: 1, name: 'Arshad', email: 'arshadkazmi42@gmail.com' },
   { id: 2, name: 'Sqlite3', email: 'sqlite3@db.com' }
 ];
-
 const UPDATE_ROW = [ 
   { id: 1, name: 'arshadkazmi42', email: 'arshadkazmi42@gmail.com' } 
 ];

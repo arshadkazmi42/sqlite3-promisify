@@ -52,13 +52,13 @@ console.log(row);
     - query (string) - SQL query
     - values (array) - Values for the query
 
-- #### `all()`
+- #### `all(query, values={Optional})`
   Executes any query and returns all the result rows
   - **Params**
     - query (string) - SQL query
     - values (array) - Values for the query
 
-- #### `run()`
+- #### `run(query, values={Optional})`
   Executes query which does not returns any results
   - **Params**
     - query (string) - SQL query

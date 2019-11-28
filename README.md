@@ -18,22 +18,27 @@ const SQLiteCrud = require('sqlite3-promisify');
 const PATH = __dirname + 'tests/data/sqlite3.db';
 const DB_NAME = 'sqlite3_test';
 
-const Db = new SQLiteCrud(DB_PATH);
-const rows = await SqliteCrud.all(`SELECT * FROM ${DB_NAME};`);
-console.log(rows);
 
-////////// OUTPUT ////////////
-// [ 
-//   { id: 1, name: 'Arshad', email: 'arshadkazmi42@gmail.com' },
-//   { id: 2, name: 'Sqlite3', email: 'sqlite3@db.com' }
-// ]
+(async () => {
+  const Db = new SQLiteCrud(DB_PATH);
+  const rows = await SqliteCrud.all(`SELECT * FROM ${DB_NAME};`);
+  console.log(rows);
+
+  ////////// OUTPUT ////////////
+  // [ 
+  //   { id: 1, name: 'Arshad', email: 'arshadkazmi42@gmail.com' },
+  //   { id: 2, name: 'Sqlite3', email: 'sqlite3@db.com' }
+  // ]
 
 
-const row = await SqliteCrud.get(`SELECT * FROM ${DB_NAME} WHERE id = ?;`, [1]);
-console.log(row);
+  const row = await SqliteCrud.get(`SELECT * FROM ${DB_NAME} WHERE id = ?;`, [1]);
+  console.log(row);
 
-////////// OUTPUT ////////////
-// { id: 1, name: 'Arshad', email: 'arshadkazmi42@gmail.com' }
+  ////////// OUTPUT ////////////
+  // { id: 1, name: 'Arshad', email: 'arshadkazmi42@gmail.com' }
+  
+})();
+
 ```
 
 ## API

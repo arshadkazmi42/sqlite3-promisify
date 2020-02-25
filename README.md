@@ -13,15 +13,14 @@ npm i sqlite3-promisify
 ## Usage
 
 ```javascript
-
-const SQLiteCrud = require('sqlite3-promisify');
-const PATH = __dirname + 'tests/data/sqlite3.db';
+const SqliteCrud = require('sqlite3-promisify');
+const DB_PATH = __dirname + '/sqlite3.db';
 const DB_NAME = 'sqlite3_test';
 
-
+// Note: Run 
 (async () => {
-  const Db = new SQLiteCrud(DB_PATH);
-  const rows = await SqliteCrud.all(`SELECT * FROM ${DB_NAME};`);
+  const Db = new SqliteCrud(DB_PATH);
+  const rows = await Db.all(`SELECT * FROM ${DB_NAME};`);
   console.log(rows);
 
   ////////// OUTPUT ////////////
@@ -31,14 +30,13 @@ const DB_NAME = 'sqlite3_test';
   // ]
 
 
-  const row = await SqliteCrud.get(`SELECT * FROM ${DB_NAME} WHERE id = ?;`, [1]);
+  const row = await Db.get(`SELECT * FROM ${DB_NAME} WHERE id = ?;`, [1]);
   console.log(row);
 
   ////////// OUTPUT ////////////
   // { id: 1, name: 'Arshad', email: 'arshadkazmi42@gmail.com' }
   
 })();
-
 ```
 
 ## API

@@ -13,13 +13,12 @@ npm i sqlite3-promisify
 ## Usage
 
 ```javascript
-const SqliteCrud = require('sqlite3-promisify');
+const SQLiteCrud = require('sqlite3-promisify');
 const DB_PATH = __dirname + '/sqlite3.db';
 const DB_NAME = 'sqlite3_test';
 
-// Note: Run 
 (async () => {
-  const Db = new SqliteCrud(DB_PATH);
+  const Db = new SQLiteCrud(DB_PATH);
   const rows = await Db.all(`SELECT * FROM ${DB_NAME};`);
   console.log(rows);
 
